@@ -64,6 +64,11 @@ func (c *Client) login(ctx context.Context) error {
 			return nil
 		}
 	}
+
+	if c.sessionCookie != nil {
+		return nil
+	}
+
 	return errors.New("session cookie not found")
 }
 
